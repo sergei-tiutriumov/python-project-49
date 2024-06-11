@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def main():
     a = "poetry run python -m brain_games.scripts.brain_games\nWelcome to the Brain Games!"
     print(a)
