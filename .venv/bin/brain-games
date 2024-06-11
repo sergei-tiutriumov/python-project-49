@@ -1,4 +1,4 @@
-#!/home/serj/Documents/python-project-49/.venv/bin/python
+#!/home/serj/Git_REPS/python-project-49/.venv/bin/python
 import sys
 from brain_games.scripts.brain_games import main
 
