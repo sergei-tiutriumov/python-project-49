@@ -1,26 +1,19 @@
 import prompt
 import random
+from brain_games.game  import game
+from brain_games.cli import welcome_user
 
+def check_condition(question, answer):
+    return (question % 2 == 0 and answer == 'yes') or (question % 2 != 0 and answer == 'no')
+def correct_answer(question):
+    return ('yes' if question % 2 == 0 else 'no')
+def question():
+     return (random.randint(1, 1000))
 
 def main():
-    a = "Welcome to the Brain Games!"
-    print(a)
-    name = prompt.string('May I have yout name?  ')
-    print(f"Hello, {name} !")
-    yes = 'yes'
-    no = 'no'
-    print(f'Answer {yes} if the mumber is even, otherwise answer {no} ')
-    for i in range(3):
-        question = random.randint(1, 1000)
-        print(f'Question: {question} ')
-        answer = prompt.string('Your answer: ')
-        if((question%2 == 0 and answer == 'yes') or (question%2 != 0 and answer == "no")):
-            print("Correct!")
-        else:
-            print(f"'{answer}' is wrong  answer ;(. Correct answer was 'no' \nLet's try again, {name}!" if answer == yes else f"'{answer}' is wrong  answer ;(. Correct answer was 'yes' \nLet's try again, {name}!")
-            break
-        if i == 2:
-            print(f"Congratulations, {name}!")
+    s = 'Answer yes if the number is even, otherwise answer no'
+    name = welcome_user()
+    game(question, name, s, check_condition, correct_answer)
 
 
 if __name__ == '__main__':
